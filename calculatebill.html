@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Electricity Bill Calculator</title>
+	<link rel="stylesheet" href="calculatebill.css">
+	<style>
+		form {
+			margin: 20px;
+			padding: 20px;
+			border: 2px solid #ccc;
+			border-radius: 10px;
+			width: 400px;
+		}
+
+		input[type="number"] {
+			padding: 5px;
+			margin: 5px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+
+		input[type="submit"] {
+			padding: 10px;
+			margin: 5px;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		h2 {
+			margin-top: 20px;
+		}
+
+		.result {
+			margin: 20px;
+			padding: 20px;
+			border: 2px solid #ccc;
+			border-radius: 10px;
+			width: 400px;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Electricity Bill Calculator</h1>
+	<form id="electricityForm">
+		<label for="units">Units Consumed:</label>
+		<input type="number" id="units" name="units" required>
+		<input type="submit" value="Calculate">
+		<a href="billpayment.html">Bill Payment</a>
+	</form>
+
+	<div id="result" class="result" style="display: none;"></div>
+
+	<script>
+		const electricityForm = document.querySelector('#electricityForm');
+		const result = document.querySelector('#result');
+
+		electricityForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			const units = parseInt(document.querySelector('#units').value);
+
+			if (!isNaN(units)) {
+				let bill = 0;
+
+				if (units <= 100) {
+					bill = units * 10;
+				} else if (units <= 200) {
+					bill = 1000 + ((units - 100) * 15);
+				} else if (units <= 300) {
+					bill = 2500 + ((units - 200) * 20);
+				} else {
+					bill = 4500 + ((units - 300) * 25);
+				}
+
+				result.innerHTML = `Your electricity bill for ${units} units is KES ${bill}`;
+				result.style.display = 'block';
+			} else {
+				alert('Please enter valid units consumed');
+			}
+		});
+	</script>
+</body>
+</html>

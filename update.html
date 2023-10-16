@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Update Contact Information</title>
+    <link rel="stylesheet" href="update.css">
+    <h1>Update contact information</h1>
+    <style>
+      label {
+        display: inline-block;
+        width: 80px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 200px;
+        margin-bottom: 10px;
+      }
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="address">Address:</label>
+      <input type="text" id="address">
+    </div>
+    
+
+    <div>
+      <label for="state">State:</label>
+      <input type="text" id="state">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email">
+    </div>
+
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone">
+    </div>
+
+    <button onclick="updateContact()">Update</button>
+
+    <script>
+      let address = "";
+      let state = "";
+      let email = "";
+      let phone = "";
+
+      function updateContact() {
+        const newAddress = document.getElementById("address").value;
+        address = newAddress;
+
+        const newState = document.getElementById("state").value;
+        state = newState;
+
+        const newEmail = document.getElementById("email").value;
+        email = newEmail;
+
+        const newPhone = document.getElementById("phone").value;
+        phone = newPhone;
+
+        alert(`Personal information updated:\nAddress: ${address}\nState: ${state}\nEmail: ${email}\nPhone: ${phone}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+ html{
+    height: 100%;
+  }
+  
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: Comic sans;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-image: url(images/energy.png);
+  }
+  nav {
+      flex: 1;
+      padding-left: 450px;
+  }
+  nav ul li {
+      display: inline-block;
+      list-style: none;
+      margin: 0 15px;
+  }
+  nav ul li a {
+      text-decoration: none;
+      color: #255;
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 600;
+  }
+  #main-holder {
+    width: 70%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-image: url(images/laugh.jpeg);
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+  }
+  
+ 
+  
+  #signup form {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  
+  
+  .signup-form-field {
+    border: none;
+    border-bottom: 1px solid #3a3a3a;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 0px 5px 5px;
+  }
+  
+  #signup-form-submit {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+  }
